@@ -1,3 +1,5 @@
 /home/benjamin/Desktop/CGame/CMakeFiles/CGame.dir
+/home/benjamin/Desktop/CGame/CMakeFiles/test_suite.dir
+/home/benjamin/Desktop/CGame/CMakeFiles/test.dir
 /home/benjamin/Desktop/CGame/CMakeFiles/edit_cache.dir
 /home/benjamin/Desktop/CGame/CMakeFiles/rebuild_cache.dir

@@ -21,5 +21,13 @@ add_executable(${PROJECT_NAME} ${SOURCES})
 
 target_link_libraries(${PROJECT_NAME} OpenGL::GL glfw)
 
+# Testing
+enable_testing()
+file(GLOB TEST_SOURCES tests/*.cpp ${PROJECT_SOURCE_DIR}/src/gl.c)
+add_executable(test_suite ${TEST_SOURCES})
+target_link_libraries(test_suite PRIVATE gtest gtest_main pthread OpenGL::GL glfw)
+target_include_directories(test_suite PRIVATE ${CMAKE_SOURCE_DIR}/include)
+add_test(NAME RunTests COMMAND test_suite)
+
 
 
