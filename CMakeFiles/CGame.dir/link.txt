@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/CGame.dir/src/GameWindow.cpp.o CMakeFiles/CGame.dir/src/main.cpp.o CMakeFiles/CGame.dir/src/gl.c.o -o CGame  /usr/lib/x86_64-linux-gnu/libglfw.so.3.3 /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so 

@@ -1,0 +1,3 @@
+/home/benjamin/Desktop/CGame/CMakeFiles/CGame.dir
+/home/benjamin/Desktop/CGame/CMakeFiles/edit_cache.dir
+/home/benjamin/Desktop/CGame/CMakeFiles/rebuild_cache.dir
