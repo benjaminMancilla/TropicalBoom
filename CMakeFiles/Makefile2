@@ -81,12 +81,12 @@ clean: CMakeFiles/CGame.dir/clean
 CMakeFiles/CGame.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CGame.dir/build.make CMakeFiles/CGame.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CGame.dir/build.make CMakeFiles/CGame.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/benjamin/Desktop/CGame/CMakeFiles --progress-num=1,2,3,4 "Built target CGame"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/benjamin/Desktop/CGame/CMakeFiles --progress-num=1,2,3,4,5 "Built target CGame"
 .PHONY : CMakeFiles/CGame.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/CGame.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/benjamin/Desktop/CGame/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/benjamin/Desktop/CGame/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/CGame.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/benjamin/Desktop/CGame/CMakeFiles 0
 .PHONY : CMakeFiles/CGame.dir/rule

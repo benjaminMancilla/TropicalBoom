@@ -1,16 +1,18 @@
 #include "GameWindow.h"
+#include "Shader.h"
+
 #include <iostream>
+#include <vector>
 
 // Constructor
 GameWindow::GameWindow(int width, int height, const std::string& title)
-    : width(width), height(height), title(title), window(nullptr) {}
+    : width(width), height(height), title(title), window(nullptr), shader(nullptr) {}
 
 // Destructor
 GameWindow::~GameWindow() 
 {
-    if (window) {
-        glfwDestroyWindow(window);
-    }
+    if (shader) {delete shader;}
+    if (window) {glfwDestroyWindow(window);}
     glfwTerminate();
 }
 
@@ -47,23 +49,41 @@ bool GameWindow::init()
     glfwSetFramebufferSizeCallback(window, framebufferSizeCallback);
     glViewport(0, 0, width, height);
 
+    // Init shader
+    shader = new Shader("shaders/vertex_shader.glsl", "shaders/fragment_shader.glsl");
+
     return true;
 }
 
-// Callback para redimensionar ventana
+// Callback for framebuffer size
 void GameWindow::framebufferSizeCallback(GLFWwindow* window, int width, int height) 
 {
     glViewport(0, 0, width, height);
 }
 
-// Bucle principal
-void GameWindow::mainLoop() 
-{    
-    while (!glfwWindowShouldClose(window)) {
-        // Limpiar el buffer de color
+// Main loop
+void GameWindow::mainLoop(const unsigned int* VAOs, const int* vertexCounts, size_t objectCount) 
+{
+    while (!glfwWindowShouldClose(window)) 
+    {
+        // Clear the screen
         glClear(GL_COLOR_BUFFER_BIT);
 
-        // Intercambiar buffers y procesar eventos
+        // Use the shader
+        shader->use();
+
+        // Draw the VAO
+        if (VAOs && vertexCounts) 
+        {
+            for (size_t i = 0; i < objectCount; i++) 
+            {
+                glBindVertexArray(VAOs[i]);
+                glDrawArrays(GL_TRIANGLES, 0, vertexCounts[i]);
+            }
+            glBindVertexArray(0); // Unbind VAO
+        }
+
+        // Swap chain and poll events
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
