@@ -176,6 +176,30 @@ src/GameWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CGame.dir/build.make CMakeFiles/CGame.dir/src/GameWindow.cpp.s
 .PHONY : src/GameWindow.cpp.s
 
+src/Model.o: src/Model.cpp.o
+.PHONY : src/Model.o
+
+# target to build an object file
+src/Model.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CGame.dir/build.make CMakeFiles/CGame.dir/src/Model.cpp.o
+.PHONY : src/Model.cpp.o
+
+src/Model.i: src/Model.cpp.i
+.PHONY : src/Model.i
+
+# target to preprocess a source file
+src/Model.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CGame.dir/build.make CMakeFiles/CGame.dir/src/Model.cpp.i
+.PHONY : src/Model.cpp.i
+
+src/Model.s: src/Model.cpp.s
+.PHONY : src/Model.s
+
+# target to generate assembly for a file
+src/Model.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CGame.dir/build.make CMakeFiles/CGame.dir/src/Model.cpp.s
+.PHONY : src/Model.cpp.s
+
 src/Shader.o: src/Shader.cpp.o
 .PHONY : src/Shader.o
 
@@ -289,6 +313,9 @@ help:
 	@echo "... src/GameWindow.o"
 	@echo "... src/GameWindow.i"
 	@echo "... src/GameWindow.s"
+	@echo "... src/Model.o"
+	@echo "... src/Model.i"
+	@echo "... src/Model.s"
 	@echo "... src/Shader.o"
 	@echo "... src/Shader.i"
 	@echo "... src/Shader.s"

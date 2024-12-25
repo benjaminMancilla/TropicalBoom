@@ -402,4 +402,5 @@ CMakeFiles/test_suite.dir/tests/test_shader.cpp.o
  /usr/include/gtest/gtest_pred_impl.h
  /home/benjamin/Desktop/CGame/include/glad/gl.h
  /home/benjamin/Desktop/CGame/include/KHR/khrplatform.h
+ /usr/include/GLFW/glfw3.h
 

@@ -1,4 +1,6 @@
 #include <GameWindow.h>
+#include <Model.h>
+
 #include <iostream>
 
 void initTriangleTest(unsigned int& VAO, unsigned int& VBO)
@@ -36,12 +38,13 @@ int main ()
         return -1;
     }
 
-    unsigned int VAO, VBO;
-    int vertexCount = 3;
-    initTriangleTest(VAO, VBO);
-    std::cout << "VAO: " << VAO << std::endl;
+    
+    Model cubeModel("models/cube.obj");
+    Model triangleModel("models/triangle.obj");
 
-    gameWindow.mainLoop(&VAO, &vertexCount, 1);
+    std::vector<Model> models = {triangleModel, cubeModel};
+
+    gameWindow.mainLoop(models);
     return 0;
 }
 

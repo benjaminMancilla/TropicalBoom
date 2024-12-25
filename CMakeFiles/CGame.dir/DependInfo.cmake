@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/benjamin/Desktop/CGame/src/gl.c" "CMakeFiles/CGame.dir/src/gl.c.o" "gcc" "CMakeFiles/CGame.dir/src/gl.c.o.d"
   "/home/benjamin/Desktop/CGame/src/GameWindow.cpp" "CMakeFiles/CGame.dir/src/GameWindow.cpp.o" "gcc" "CMakeFiles/CGame.dir/src/GameWindow.cpp.o.d"
+  "/home/benjamin/Desktop/CGame/src/Model.cpp" "CMakeFiles/CGame.dir/src/Model.cpp.o" "gcc" "CMakeFiles/CGame.dir/src/Model.cpp.o.d"
   "/home/benjamin/Desktop/CGame/src/Shader.cpp" "CMakeFiles/CGame.dir/src/Shader.cpp.o" "gcc" "CMakeFiles/CGame.dir/src/Shader.cpp.o.d"
   "/home/benjamin/Desktop/CGame/src/main.cpp" "CMakeFiles/CGame.dir/src/main.cpp.o" "gcc" "CMakeFiles/CGame.dir/src/main.cpp.o.d"
   )

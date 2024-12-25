@@ -399,8 +399,11 @@ CMakeFiles/test_suite.dir/tests/test_shader.cpp.o: tests/test_shader.cpp \
   /usr/include/gtest/gtest-typed-test.h \
   /usr/include/gtest/gtest_pred_impl.h \
   include/glad/gl.h \
-  include/KHR/khrplatform.h
+  include/KHR/khrplatform.h \
+  /usr/include/GLFW/glfw3.h
 
+
+/usr/include/GLFW/glfw3.h:
 
 /usr/include/gtest/gtest_pred_impl.h:
 

@@ -2,7 +2,7 @@
 #include <glad/gl.h>
 #include <GLFW/glfw3.h>
 
-// Mock para inicializar el triángulo
+// Triangle Mock
 void mockInitializeTriangle(unsigned int& VAO, unsigned int& VBO) {
     float vertices[] = {
         -0.5f, -0.5f, 0.0f,
@@ -24,8 +24,8 @@ void mockInitializeTriangle(unsigned int& VAO, unsigned int& VBO) {
     glBindVertexArray(0);
 }
 
+// Test Triangle rendering
 TEST(TriangleTest, GeneratesCorrectly) {
-    // Crear un contexto OpenGL
     if (!glfwInit()) {
         FAIL() << "GLFW initialization failed!";
     }
@@ -33,7 +33,6 @@ TEST(TriangleTest, GeneratesCorrectly) {
     ASSERT_NE(window, nullptr) << "Failed to create GLFW window!";
     glfwMakeContextCurrent(window);
 
-    // Verificar inicialización de GLAD
     if (!gladLoadGL(glfwGetProcAddress)) {
         glfwDestroyWindow(window);
         glfwTerminate();
@@ -54,7 +53,6 @@ TEST(TriangleTest, GeneratesCorrectly) {
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
 
-    // Limpiar contexto
     glfwDestroyWindow(window);
     glfwTerminate();
 }

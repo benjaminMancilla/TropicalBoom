@@ -1,5 +1,6 @@
 #include "GameWindow.h"
 #include "Shader.h"
+#include "Model.h"
 
 #include <iostream>
 #include <vector>
@@ -52,6 +53,8 @@ bool GameWindow::init()
     // Init shader
     shader = new Shader("shaders/vertex_shader.glsl", "shaders/fragment_shader.glsl");
 
+    glEnable(GL_DEPTH_TEST);
+
     return true;
 }
 
@@ -61,29 +64,45 @@ void GameWindow::framebufferSizeCallback(GLFWwindow* window, int width, int heig
     glViewport(0, 0, width, height);
 }
 
-// Main loop
-void GameWindow::mainLoop(const unsigned int* VAOs, const int* vertexCounts, size_t objectCount) 
+// Main loop with Models
+void GameWindow::mainLoop(const std::vector<Model>& models) 
 {
     while (!glfwWindowShouldClose(window)) 
     {
         // Clear the screen
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
 
         // Use the shader
         shader->use();
 
         // Draw the VAO
-        if (VAOs && vertexCounts) 
+        for (const Model& model : models) 
         {
-            for (size_t i = 0; i < objectCount; i++) 
-            {
-                glBindVertexArray(VAOs[i]);
-                glDrawArrays(GL_TRIANGLES, 0, vertexCounts[i]);
-            }
-            glBindVertexArray(0); // Unbind VAO
+            model.draw();
         }
 
         // Swap chain and poll events
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+    }
+}
+
+//Main Loop with raw VAOs
+void GameWindow::mainLoop(const unsigned int* VAOs, const int* vertexCounts, size_t objectCount) {
+    while (!glfwWindowShouldClose(window)) {
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+        shader->use();
+
+        if (VAOs && vertexCounts) {
+            for (size_t i = 0; i < objectCount; ++i) {
+                glBindVertexArray(VAOs[i]);
+                glDrawArrays(GL_TRIANGLES, 0, vertexCounts[i]);
+            }
+            glBindVertexArray(0);
+        }
+
         glfwSwapBuffers(window);
         glfwPollEvents();
     }

@@ -16,10 +16,12 @@ set(SOURCES ${SOURCES} ${PROJECT_SOURCE_DIR}/src/gl.c)
 
 find_package(OpenGL REQUIRED)
 find_package(glfw3 REQUIRED)
+find_package(glm REQUIRED)
+find_package(assimp REQUIRED)
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 
-target_link_libraries(${PROJECT_NAME} OpenGL::GL glfw)
+target_link_libraries(${PROJECT_NAME} OpenGL::GL glfw glm::glm assimp::assimp)
 
 # Testing
 enable_testing()

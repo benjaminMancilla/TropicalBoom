@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CGame.pdb"
   "CMakeFiles/CGame.dir/src/GameWindow.cpp.o"
   "CMakeFiles/CGame.dir/src/GameWindow.cpp.o.d"
+  "CMakeFiles/CGame.dir/src/Model.cpp.o"
+  "CMakeFiles/CGame.dir/src/Model.cpp.o.d"
   "CMakeFiles/CGame.dir/src/Shader.cpp.o"
   "CMakeFiles/CGame.dir/src/Shader.cpp.o.d"
   "CMakeFiles/CGame.dir/src/gl.c.o"

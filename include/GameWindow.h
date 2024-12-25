@@ -2,11 +2,13 @@
 #define GAMEWINDOW_H
 
 #include "Shader.h"
+#include "Model.h"
 
 #include <glad/gl.h>
 #include <GLFW/glfw3.h>
-#include <string>
 
+#include <string>
+#include <vector>
 
 //Window for the game
 class GameWindow 
@@ -16,7 +18,9 @@ class GameWindow
         ~GameWindow();
 
         bool init();
-        void mainLoop(const unsigned int* VAOs, const int* vertexCounts, size_t objectCount) ;
+        void mainLoop(const std::vector<Model>& models);
+        void mainLoop(const unsigned int* VAOs, const int* vertexCounts, size_t objectCount);
+
 
 
     private:
