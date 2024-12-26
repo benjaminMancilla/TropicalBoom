@@ -10,7 +10,15 @@ void Scene::setShader(Shader* shader)
     this->shader = shader;
 }
 
-void Scene::prepareRender(Renderer& renderer)
+void Scene::setupModels()
+{
+    for (Model& model : models)
+    {
+        model.setupMesh();
+    }
+}
+
+void Scene::render(Renderer& renderer)
 {
     if (shader)
     {

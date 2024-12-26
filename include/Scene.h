@@ -12,11 +12,12 @@ class Scene
     public:
         void addModel(const Model& model);
         void setShader(Shader* shader);
-        void prepareRender(Renderer& renderer);
+        void setupModels();
+        void render(Renderer& renderer);
 
     private:
         std::vector<Model> models;
-        Shader* shader;
+        Shader* shader = nullptr;
 
 };
 

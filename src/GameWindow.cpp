@@ -69,7 +69,7 @@ void GameWindow::mainLoop(Scene& scene, Renderer& renderer)
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         // Prepare Scene
-        scene.prepareRender(renderer);
+        scene.render(renderer);
 
         // Swap chain and poll events
         glfwSwapBuffers(window);

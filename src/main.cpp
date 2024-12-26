@@ -50,6 +50,7 @@ int main ()
     scene.addModel(cube);
     scene.addModel(triangle);
     scene.setShader(&shader);
+    scene.setupModels();
 
     gameWindow.mainLoop(scene, renderer);
 

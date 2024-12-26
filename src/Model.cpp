@@ -7,7 +7,6 @@
 Model::Model(const std::string& path)
 {
     loadModel(path);
-    setupMesh();
 }
 
 void Model::loadModel(const std::string& path)
@@ -88,11 +87,4 @@ void Model::setupMesh()
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
-}
-
-void Model::draw() const
-{
-    glBindVertexArray(Model_VAO);
-    glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
-    glBindVertexArray(0);
 }

@@ -6,7 +6,7 @@
 class Renderer
 {
     public:
-        void renderModel(const Model& model);
+        void renderModel(const Model& model) const;
 };
 
 #endif // RENDERER_H
