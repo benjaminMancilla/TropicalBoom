@@ -7,12 +7,11 @@
 
 // Constructor
 GameWindow::GameWindow(int width, int height, const std::string& title)
-    : width(width), height(height), title(title), window(nullptr), shader(nullptr) {}
+    : width(width), height(height), title(title), window(nullptr) {}
 
 // Destructor
 GameWindow::~GameWindow() 
 {
-    if (shader) {delete shader;}
     if (window) {glfwDestroyWindow(window);}
     glfwTerminate();
 }
@@ -50,9 +49,6 @@ bool GameWindow::init()
     glfwSetFramebufferSizeCallback(window, framebufferSizeCallback);
     glViewport(0, 0, width, height);
 
-    // Init shader
-    shader = new Shader("shaders/vertex_shader.glsl", "shaders/fragment_shader.glsl");
-
     glEnable(GL_DEPTH_TEST);
 
     return true;
@@ -65,22 +61,15 @@ void GameWindow::framebufferSizeCallback(GLFWwindow* window, int width, int heig
 }
 
 // Main loop with Models
-void GameWindow::mainLoop(const std::vector<Model>& models) 
+void GameWindow::mainLoop(Scene& scene, Renderer& renderer) 
 {
     while (!glfwWindowShouldClose(window)) 
     {
         // Clear the screen
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-
-        // Use the shader
-        shader->use();
-
-        // Draw the VAO
-        for (const Model& model : models) 
-        {
-            model.draw();
-        }
+        // Prepare Scene
+        scene.prepareRender(renderer);
 
         // Swap chain and poll events
         glfwSwapBuffers(window);
@@ -88,22 +77,3 @@ void GameWindow::mainLoop(const std::vector<Model>& models)
     }
 }
 
-//Main Loop with raw VAOs
-void GameWindow::mainLoop(const unsigned int* VAOs, const int* vertexCounts, size_t objectCount) {
-    while (!glfwWindowShouldClose(window)) {
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-        shader->use();
-
-        if (VAOs && vertexCounts) {
-            for (size_t i = 0; i < objectCount; ++i) {
-                glBindVertexArray(VAOs[i]);
-                glDrawArrays(GL_TRIANGLES, 0, vertexCounts[i]);
-            }
-            glBindVertexArray(0);
-        }
-
-        glfwSwapBuffers(window);
-        glfwPollEvents();
-    }
-}

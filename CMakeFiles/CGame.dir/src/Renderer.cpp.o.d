@@ -1,6 +1,6 @@
-CMakeFiles/CGame.dir/src/main.cpp.o: \
- /home/benjamin/Desktop/CGame/src/main.cpp /usr/include/stdc-predef.h \
- /home/benjamin/Desktop/CGame/include/GameWindow.h \
+CMakeFiles/CGame.dir/src/Renderer.cpp.o: \
+ /home/benjamin/Desktop/CGame/src/Renderer.cpp /usr/include/stdc-predef.h \
+ /home/benjamin/Desktop/CGame/include/Renderer.h \
  /home/benjamin/Desktop/CGame/include/Model.h \
  /home/benjamin/Desktop/CGame/include/glad/gl.h \
  /home/benjamin/Desktop/CGame/include/KHR/khrplatform.h \
@@ -302,10 +302,4 @@ CMakeFiles/CGame.dir/src/main.cpp.o: \
  /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
- /usr/include/c++/11/bits/vector.tcc \
- /home/benjamin/Desktop/CGame/include/Scene.h \
- /home/benjamin/Desktop/CGame/include/Shader.h \
- /home/benjamin/Desktop/CGame/include/Renderer.h \
- /home/benjamin/Desktop/CGame/include/Model.h \
- /home/benjamin/Desktop/CGame/include/Scene.h \
- /home/benjamin/Desktop/CGame/include/Renderer.h
+ /usr/include/c++/11/bits/vector.tcc

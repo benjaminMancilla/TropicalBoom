@@ -1,5 +1,7 @@
 #include <GameWindow.h>
 #include <Model.h>
+#include <Scene.h>
+#include <Renderer.h>
 
 #include <iostream>
 
@@ -38,13 +40,19 @@ int main ()
         return -1;
     }
 
-    
-    Model cubeModel("models/cube.obj");
-    Model triangleModel("models/triangle.obj");
+    Shader shader("shaders/vertex_shader.glsl", "shaders/fragment_shader.glsl");
+    Scene scene;
+    Renderer renderer;
 
-    std::vector<Model> models = {triangleModel, cubeModel};
+    Model cube("models/cube.obj");
+    Model triangle("models/triangle.obj");
 
-    gameWindow.mainLoop(models);
+    scene.addModel(cube);
+    scene.addModel(triangle);
+    scene.setShader(&shader);
+
+    gameWindow.mainLoop(scene, renderer);
+
     return 0;
 }
 

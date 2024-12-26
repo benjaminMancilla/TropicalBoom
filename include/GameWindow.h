@@ -1,8 +1,9 @@
 #ifndef GAMEWINDOW_H
 #define GAMEWINDOW_H
 
-#include "Shader.h"
 #include "Model.h"
+#include "Scene.h"
+#include "Renderer.h"
 
 #include <glad/gl.h>
 #include <GLFW/glfw3.h>
@@ -18,18 +19,15 @@ class GameWindow
         ~GameWindow();
 
         bool init();
-        void mainLoop(const std::vector<Model>& models);
-        void mainLoop(const unsigned int* VAOs, const int* vertexCounts, size_t objectCount);
+        void mainLoop(Scene& scene, Renderer& renderer);
 
 
 
     private:
+        GLFWwindow* window;
         int width;
         int height;
         std::string title;
-        GLFWwindow* window;
-        Shader* shader;
-
 
         static void framebufferSizeCallback(GLFWwindow* window, int width, int height);
 };
