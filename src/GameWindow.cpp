@@ -61,15 +61,16 @@ void GameWindow::framebufferSizeCallback(GLFWwindow* window, int width, int heig
 }
 
 // Main loop with Models
-void GameWindow::mainLoop(Scene& scene, Renderer& renderer) 
+void GameWindow::mainLoop(Scene& scene) 
 {
     while (!glfwWindowShouldClose(window)) 
     {
         // Clear the screen
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        // Prepare Scene
-        scene.render(renderer);
+        // Render the scene
+        scene.renderShadowMap();
+        scene.render();
 
         // Swap chain and poll events
         glfwSwapBuffers(window);

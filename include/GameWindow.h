@@ -19,7 +19,7 @@ class GameWindow
         ~GameWindow();
 
         bool init();
-        void mainLoop(Scene& scene, Renderer& renderer);
+        void mainLoop(Scene& scene);
 
 
 

@@ -113,3 +113,15 @@ void Shader::setVec3(const std::string& name, const glm::vec3& vec) const
         std::cerr << "Vec3: Shader program not initialized" << std::endl;
     }
 }
+
+void Shader::setSampler(const std::string& name, int textureUnit) const
+{
+    if (ID) 
+    {
+        glUniform1i(glGetUniformLocation(ID, name.c_str()), textureUnit);
+    }
+    else 
+    {
+        std::cerr << "Sampler: Shader program not initialized" << std::endl;
+    }
+}

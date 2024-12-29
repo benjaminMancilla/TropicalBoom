@@ -38,16 +38,20 @@ int main() {
         return -1;
     }
     Shader shader("shaders/vertex_shader.glsl", "shaders/fragment_shader.glsl");
+    Shader shadowShader("shaders/shadow_vertex_shader.glsl", "shaders/shadow_fragment_shader.glsl");
 
     Scene scene;
 
     scene.setShader(&shader);
+    scene.setShadowShader(&shadowShader);
     
     scene.setProjection(glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f));
 
     // Configurar la cámara
-    Camera camera(glm::vec3(0.0f, 3.0f, 5.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+    Camera camera(glm::vec3(0.0f, 1.0f, 5.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
     scene.setCamera(camera);
+
+    scene.setLightPos(glm::vec3(2.0f, 6.0f, 5.0f));
 
     Model cube("models/cube.obj");
     cube.setColor(glm::vec3(0.0f, 1.0f, 0.0f));
@@ -63,9 +67,12 @@ int main() {
     scene.addModel(plane);
 
     scene.setupModels();
+    scene.setupShadowMap();
 
     Renderer renderer;
-    gameWindow.mainLoop(scene, renderer);
+    scene.setRenderer(&renderer);
+
+    gameWindow.mainLoop(scene);
 
     return 0;
 }
