@@ -14,6 +14,8 @@ class Camera
         void setPosition(const glm::vec3& position);
         void lookAt(const glm::vec3& target);
 
+        const glm::vec3& getPosition() const { return position; }
+
     private:
         glm::mat4 viewMatrix;
         glm::vec3 position;

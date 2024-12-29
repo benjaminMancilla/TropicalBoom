@@ -33,13 +33,27 @@ void Scene::render(Renderer& renderer)
     {
         shader->use();
 
-        // set projections to shader
+        // set matrix projections to shader
         shader->setMat4("view", camera.getViewMatrix());
         shader->setMat4("projection", projectionMatrix);
+
+        // set light
+        shader->setVec3("lightPos", glm::vec3(2.0f, 2.0f, 2.0f));
+        shader->setVec3("lightColor", glm::vec3(1.0f, 1.0f, 1.0f));
+        shader->setVec3("viewPos", camera.getPosition());
+
+        static float rotationAngle = 0.0f; // Acumula el ángulo de rotación
+        rotationAngle += 0.01f; // Incrementa el ángulo en cada fotograma
+
+        // draw models
         for (const Model& model : models)
         {
+
+            glm::mat4 rotationMatrix = glm::rotate(glm::mat4(1.0f), rotationAngle, glm::vec3(0.0f, 1.0f, 0.0f));
+            glm::mat4 modelMatrix = rotationMatrix * model.getModelMatrix();
+            shader->setMat4("model", modelMatrix);
             shader->setVec3("objectColor", model.getColor());
-            shader->setMat4("model", model.getModelMatrix());
+            //shader->setMat4("model", model.getModelMatrix());
             renderer.renderModel(model);
         }
         

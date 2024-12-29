@@ -46,16 +46,22 @@ int main() {
     scene.setProjection(glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f));
 
     // Configurar la cámara
-    Camera camera(glm::vec3(0.0f, 0.0f, 3.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+    Camera camera(glm::vec3(0.0f, 3.0f, 5.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
     scene.setCamera(camera);
 
     Model cube("models/cube.obj");
     cube.setColor(glm::vec3(0.0f, 1.0f, 0.0f));
+
     Model triangle("models/triangle.obj");
     triangle.setColor(glm::vec3(0.0f, 0.0f, 1.0f));
 
+    Model plane("models/plane.obj");
+    plane.setColor(glm::vec3(0.8f, 0.8f, 0.8f));
+
     scene.addModel(cube);
     scene.addModel(triangle);
+    scene.addModel(plane);
+
     scene.setupModels();
 
     Renderer renderer;
