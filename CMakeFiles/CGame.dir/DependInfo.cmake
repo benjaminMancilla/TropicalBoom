@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/benjamin/Desktop/CGame/src/gl.c" "CMakeFiles/CGame.dir/src/gl.c.o" "gcc" "CMakeFiles/CGame.dir/src/gl.c.o.d"
+  "/home/benjamin/Desktop/CGame/src/Camera.cpp" "CMakeFiles/CGame.dir/src/Camera.cpp.o" "gcc" "CMakeFiles/CGame.dir/src/Camera.cpp.o.d"
   "/home/benjamin/Desktop/CGame/src/GameWindow.cpp" "CMakeFiles/CGame.dir/src/GameWindow.cpp.o" "gcc" "CMakeFiles/CGame.dir/src/GameWindow.cpp.o.d"
   "/home/benjamin/Desktop/CGame/src/Model.cpp" "CMakeFiles/CGame.dir/src/Model.cpp.o" "gcc" "CMakeFiles/CGame.dir/src/Model.cpp.o.d"
   "/home/benjamin/Desktop/CGame/src/Renderer.cpp" "CMakeFiles/CGame.dir/src/Renderer.cpp.o" "gcc" "CMakeFiles/CGame.dir/src/Renderer.cpp.o.d"

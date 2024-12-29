@@ -4,6 +4,7 @@
 #include <assimp/postprocess.h>
 #include <iostream>
 
+
 Model::Model(const std::string& path)
 {
     loadModel(path);
@@ -87,4 +88,19 @@ void Model::setupMesh()
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
+}
+
+void Model::translate(const glm::vec3& translation)
+{
+    modelMatrix = glm::translate(modelMatrix, translation);
+}
+
+void Model::rotate(float angle, const glm::vec3& axis)
+{
+    modelMatrix = glm::rotate(modelMatrix, glm::radians(angle), axis);
+}
+
+void Model::scale(const glm::vec3& scaleFactors)
+{
+    modelMatrix = glm::scale(modelMatrix, scaleFactors);
 }

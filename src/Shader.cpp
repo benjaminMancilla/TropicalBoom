@@ -1,5 +1,8 @@
 #include "Shader.h"
+
 #include <glad/gl.h>
+#include <glm/gtc/type_ptr.hpp>
+
 #include <fstream>
 #include <sstream>
 #include <iostream>
@@ -64,7 +67,7 @@ void Shader::use()
     }
     else 
     {
-        std::cerr << "Shader program not initialized" << std::endl;
+        std::cerr << "Use: Shader program not initialized" << std::endl;
     }
 }
 
@@ -84,5 +87,29 @@ void Shader::checkCompileErrors(unsigned int shader, const std::string& type)
             glGetProgramInfoLog(shader, 1024, nullptr, infoLog);
             std::cerr << "ERROR::PROGRAM_LINKING_ERROR of type: " << type << "\n" << infoLog << "\n";
         }
+    }
+}
+
+void Shader::setMat4(const std::string& name, const glm::mat4& mat) const
+{
+    if (ID) 
+    {
+        glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, glm::value_ptr(mat));
+    }
+    else 
+    {
+        std::cerr << "Mat4: Shader program not initialized" << std::endl;
+    }
+}
+
+void Shader::setVec3(const std::string& name, const glm::vec3& vec) const
+{
+    if (ID) 
+    {
+        glUniform3fv(glGetUniformLocation(ID, name.c_str()), 1, &vec[0]);
+    }
+    else 
+    {
+        std::cerr << "Vec3: Shader program not initialized" << std::endl;
     }
 }

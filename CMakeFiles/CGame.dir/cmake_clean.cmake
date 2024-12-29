@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CGame"
   "CGame.pdb"
+  "CMakeFiles/CGame.dir/src/Camera.cpp.o"
+  "CMakeFiles/CGame.dir/src/Camera.cpp.o.d"
   "CMakeFiles/CGame.dir/src/GameWindow.cpp.o"
   "CMakeFiles/CGame.dir/src/GameWindow.cpp.o.d"
   "CMakeFiles/CGame.dir/src/Model.cpp.o"

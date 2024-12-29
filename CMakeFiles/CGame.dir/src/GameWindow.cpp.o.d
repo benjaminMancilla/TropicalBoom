@@ -218,7 +218,19 @@ CMakeFiles/CGame.dir/src/GameWindow.cpp.o: \
  /usr/include/glm/packing.hpp /usr/include/glm/detail/func_packing.inl \
  /usr/include/glm/detail/type_half.hpp \
  /usr/include/glm/detail/type_half.inl /usr/include/glm/integer.hpp \
- /usr/include/glm/detail/func_integer.inl /usr/include/c++/11/iostream \
+ /usr/include/glm/detail/func_integer.inl \
+ /usr/include/glm/gtc/matrix_transform.hpp \
+ /usr/include/glm/ext/matrix_projection.hpp \
+ /usr/include/glm/gtc/constants.hpp \
+ /usr/include/glm/ext/scalar_constants.hpp \
+ /usr/include/glm/ext/scalar_constants.inl \
+ /usr/include/glm/gtc/constants.inl \
+ /usr/include/glm/ext/matrix_projection.inl \
+ /usr/include/glm/ext/matrix_clip_space.hpp \
+ /usr/include/glm/ext/matrix_clip_space.inl \
+ /usr/include/glm/ext/matrix_transform.hpp \
+ /usr/include/glm/ext/matrix_transform.inl \
+ /usr/include/glm/gtc/matrix_transform.inl /usr/include/c++/11/iostream \
  /usr/include/c++/11/ostream /usr/include/c++/11/ios \
  /usr/include/c++/11/iosfwd /usr/include/c++/11/bits/stringfwd.h \
  /usr/include/c++/11/bits/memoryfwd.h /usr/include/c++/11/bits/postypes.h \
@@ -307,5 +319,6 @@ CMakeFiles/CGame.dir/src/GameWindow.cpp.o: \
  /home/benjamin/Desktop/CGame/include/Scene.h \
  /home/benjamin/Desktop/CGame/include/Shader.h \
  /home/benjamin/Desktop/CGame/include/Renderer.h \
+ /home/benjamin/Desktop/CGame/include/Camera.h \
  /home/benjamin/Desktop/CGame/include/Shader.h \
  /home/benjamin/Desktop/CGame/include/Model.h

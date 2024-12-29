@@ -69,10 +69,24 @@ include CMakeFiles/CGame.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/CGame.dir/flags.make
 
+CMakeFiles/CGame.dir/src/Camera.cpp.o: CMakeFiles/CGame.dir/flags.make
+CMakeFiles/CGame.dir/src/Camera.cpp.o: src/Camera.cpp
+CMakeFiles/CGame.dir/src/Camera.cpp.o: CMakeFiles/CGame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/benjamin/Desktop/CGame/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CGame.dir/src/Camera.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGame.dir/src/Camera.cpp.o -MF CMakeFiles/CGame.dir/src/Camera.cpp.o.d -o CMakeFiles/CGame.dir/src/Camera.cpp.o -c /home/benjamin/Desktop/CGame/src/Camera.cpp
+
+CMakeFiles/CGame.dir/src/Camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGame.dir/src/Camera.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/benjamin/Desktop/CGame/src/Camera.cpp > CMakeFiles/CGame.dir/src/Camera.cpp.i
+
+CMakeFiles/CGame.dir/src/Camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGame.dir/src/Camera.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/benjamin/Desktop/CGame/src/Camera.cpp -o CMakeFiles/CGame.dir/src/Camera.cpp.s
+
 CMakeFiles/CGame.dir/src/GameWindow.cpp.o: CMakeFiles/CGame.dir/flags.make
 CMakeFiles/CGame.dir/src/GameWindow.cpp.o: src/GameWindow.cpp
 CMakeFiles/CGame.dir/src/GameWindow.cpp.o: CMakeFiles/CGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/benjamin/Desktop/CGame/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CGame.dir/src/GameWindow.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/benjamin/Desktop/CGame/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CGame.dir/src/GameWindow.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGame.dir/src/GameWindow.cpp.o -MF CMakeFiles/CGame.dir/src/GameWindow.cpp.o.d -o CMakeFiles/CGame.dir/src/GameWindow.cpp.o -c /home/benjamin/Desktop/CGame/src/GameWindow.cpp
 
 CMakeFiles/CGame.dir/src/GameWindow.cpp.i: cmake_force
@@ -86,7 +100,7 @@ CMakeFiles/CGame.dir/src/GameWindow.cpp.s: cmake_force
 CMakeFiles/CGame.dir/src/Model.cpp.o: CMakeFiles/CGame.dir/flags.make
 CMakeFiles/CGame.dir/src/Model.cpp.o: src/Model.cpp
 CMakeFiles/CGame.dir/src/Model.cpp.o: CMakeFiles/CGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/benjamin/Desktop/CGame/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CGame.dir/src/Model.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/benjamin/Desktop/CGame/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CGame.dir/src/Model.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGame.dir/src/Model.cpp.o -MF CMakeFiles/CGame.dir/src/Model.cpp.o.d -o CMakeFiles/CGame.dir/src/Model.cpp.o -c /home/benjamin/Desktop/CGame/src/Model.cpp
 
 CMakeFiles/CGame.dir/src/Model.cpp.i: cmake_force
@@ -100,7 +114,7 @@ CMakeFiles/CGame.dir/src/Model.cpp.s: cmake_force
 CMakeFiles/CGame.dir/src/Renderer.cpp.o: CMakeFiles/CGame.dir/flags.make
 CMakeFiles/CGame.dir/src/Renderer.cpp.o: src/Renderer.cpp
 CMakeFiles/CGame.dir/src/Renderer.cpp.o: CMakeFiles/CGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/benjamin/Desktop/CGame/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CGame.dir/src/Renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/benjamin/Desktop/CGame/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CGame.dir/src/Renderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGame.dir/src/Renderer.cpp.o -MF CMakeFiles/CGame.dir/src/Renderer.cpp.o.d -o CMakeFiles/CGame.dir/src/Renderer.cpp.o -c /home/benjamin/Desktop/CGame/src/Renderer.cpp
 
 CMakeFiles/CGame.dir/src/Renderer.cpp.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/CGame.dir/src/Renderer.cpp.s: cmake_force
 CMakeFiles/CGame.dir/src/Scene.cpp.o: CMakeFiles/CGame.dir/flags.make
 CMakeFiles/CGame.dir/src/Scene.cpp.o: src/Scene.cpp
 CMakeFiles/CGame.dir/src/Scene.cpp.o: CMakeFiles/CGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/benjamin/Desktop/CGame/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CGame.dir/src/Scene.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/benjamin/Desktop/CGame/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/CGame.dir/src/Scene.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGame.dir/src/Scene.cpp.o -MF CMakeFiles/CGame.dir/src/Scene.cpp.o.d -o CMakeFiles/CGame.dir/src/Scene.cpp.o -c /home/benjamin/Desktop/CGame/src/Scene.cpp
 
 CMakeFiles/CGame.dir/src/Scene.cpp.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/CGame.dir/src/Scene.cpp.s: cmake_force
 CMakeFiles/CGame.dir/src/Shader.cpp.o: CMakeFiles/CGame.dir/flags.make
 CMakeFiles/CGame.dir/src/Shader.cpp.o: src/Shader.cpp
 CMakeFiles/CGame.dir/src/Shader.cpp.o: CMakeFiles/CGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/benjamin/Desktop/CGame/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/CGame.dir/src/Shader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/benjamin/Desktop/CGame/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/CGame.dir/src/Shader.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGame.dir/src/Shader.cpp.o -MF CMakeFiles/CGame.dir/src/Shader.cpp.o.d -o CMakeFiles/CGame.dir/src/Shader.cpp.o -c /home/benjamin/Desktop/CGame/src/Shader.cpp
 
 CMakeFiles/CGame.dir/src/Shader.cpp.i: cmake_force
@@ -142,7 +156,7 @@ CMakeFiles/CGame.dir/src/Shader.cpp.s: cmake_force
 CMakeFiles/CGame.dir/src/main.cpp.o: CMakeFiles/CGame.dir/flags.make
 CMakeFiles/CGame.dir/src/main.cpp.o: src/main.cpp
 CMakeFiles/CGame.dir/src/main.cpp.o: CMakeFiles/CGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/benjamin/Desktop/CGame/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/CGame.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/benjamin/Desktop/CGame/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/CGame.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CGame.dir/src/main.cpp.o -MF CMakeFiles/CGame.dir/src/main.cpp.o.d -o CMakeFiles/CGame.dir/src/main.cpp.o -c /home/benjamin/Desktop/CGame/src/main.cpp
 
 CMakeFiles/CGame.dir/src/main.cpp.i: cmake_force
@@ -156,7 +170,7 @@ CMakeFiles/CGame.dir/src/main.cpp.s: cmake_force
 CMakeFiles/CGame.dir/src/gl.c.o: CMakeFiles/CGame.dir/flags.make
 CMakeFiles/CGame.dir/src/gl.c.o: src/gl.c
 CMakeFiles/CGame.dir/src/gl.c.o: CMakeFiles/CGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/benjamin/Desktop/CGame/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/CGame.dir/src/gl.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/benjamin/Desktop/CGame/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/CGame.dir/src/gl.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/CGame.dir/src/gl.c.o -MF CMakeFiles/CGame.dir/src/gl.c.o.d -o CMakeFiles/CGame.dir/src/gl.c.o -c /home/benjamin/Desktop/CGame/src/gl.c
 
 CMakeFiles/CGame.dir/src/gl.c.i: cmake_force
@@ -169,6 +183,7 @@ CMakeFiles/CGame.dir/src/gl.c.s: cmake_force
 
 # Object files for target CGame
 CGame_OBJECTS = \
+"CMakeFiles/CGame.dir/src/Camera.cpp.o" \
 "CMakeFiles/CGame.dir/src/GameWindow.cpp.o" \
 "CMakeFiles/CGame.dir/src/Model.cpp.o" \
 "CMakeFiles/CGame.dir/src/Renderer.cpp.o" \
@@ -180,6 +195,7 @@ CGame_OBJECTS = \
 # External object files for target CGame
 CGame_EXTERNAL_OBJECTS =
 
+CGame: CMakeFiles/CGame.dir/src/Camera.cpp.o
 CGame: CMakeFiles/CGame.dir/src/GameWindow.cpp.o
 CGame: CMakeFiles/CGame.dir/src/Model.cpp.o
 CGame: CMakeFiles/CGame.dir/src/Renderer.cpp.o
@@ -196,7 +212,7 @@ CGame: /usr/lib/x86_64-linux-gnu/libz.so
 CGame: /usr/lib/x86_64-linux-gnu/libdraco.so.4.0.0
 CGame: /usr/lib/x86_64-linux-gnu/librt.a
 CGame: CMakeFiles/CGame.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/benjamin/Desktop/CGame/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable CGame"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/benjamin/Desktop/CGame/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable CGame"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CGame.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

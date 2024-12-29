@@ -1,6 +1,11 @@
 #version 330 core
-out vec4 FragColor; // Salida: color del fragmento
+
+out vec4 FragColor;
+
+uniform vec3 objectColor; // Object color
 
 void main() {
-    FragColor = vec4(1.0, 0.5, 0.2, 1.0); // Asigna un color naranja
+    // For the moment is set at 1 color
+    FragColor = vec4(objectColor, 1.0);
 }
+
