@@ -318,6 +318,7 @@ CMakeFiles/CGame.dir/src/Scene.cpp.o: \
  /home/benjamin/Desktop/CGame/include/Shader.h \
  /home/benjamin/Desktop/CGame/include/Renderer.h \
  /home/benjamin/Desktop/CGame/include/Camera.h \
+ /home/benjamin/Desktop/CGame/include/Light/Light.h \
  /usr/include/glm/gtx/string_cast.hpp \
  /usr/include/glm/gtc/type_precision.hpp \
  /usr/include/glm/gtc/quaternion.hpp \

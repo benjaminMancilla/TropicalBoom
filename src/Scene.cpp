@@ -29,26 +29,32 @@ void Scene::render()
         shader->setMat4("lightSpaceMatrix", lightSpaceMatrix);
 
         // set light
-        shader->setVec3("lightPos", glm::vec3(2.0f, 2.0f, 2.0f));
-        shader->setVec3("lightColor", glm::vec3(1.0f, 1.0f, 1.0f));
+        shader->setInt("lightCount", lights.size());
+        for (size_t i = 0; i < lights.size(); i++)
+        {
+            std::string baseName = "lights[" + std::to_string(i) + "]";
+            lights[i]->applyToShader(baseName, shader->ID);
+        }
+
+        // set camera
         shader->setVec3("viewPos", camera.getPosition());
 
-        shader->setSampler("shadowMap", 0); // Asociar sampler con la textura
+        shader->setSampler("shadowMap", 0); 
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, shadowMap);
 
-        static float rotationAngle = 0.0f; // Acumula el ángulo de rotación
-        rotationAngle += 0.01f; // Incrementa el ángulo en cada fotograma
+        static float rotationAngle = 0.0f;
+        rotationAngle += 0.01f;
 
         // draw models
         for (const Model& model : models)
         {
 
-            glm::mat4 rotationMatrix = glm::rotate(glm::mat4(1.0f), rotationAngle, glm::vec3(0.0f, 1.0f, 0.0f));
-            glm::mat4 modelMatrix = rotationMatrix * model.getModelMatrix();
-            shader->setMat4("model", modelMatrix);
+            //glm::mat4 rotationMatrix = glm::rotate(glm::mat4(1.0f), rotationAngle, glm::vec3(0.0f, 1.0f, 0.0f));
+            //glm::mat4 modelMatrix = rotationMatrix * model.getModelMatrix();
+            //shader->setMat4("model", modelMatrix);
+            shader->setMat4("model", model.getModelMatrix());
             shader->setVec3("objectColor", model.getColor());
-            //shader->setMat4("model", model.getModelMatrix());
             renderer->renderModel(model);
         }
         
@@ -96,9 +102,12 @@ void Scene::renderShadowMap()
     glClear(GL_DEPTH_BUFFER_BIT);
 
     shadowShader->use();
-    //glm::mat4 lightProjection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, 1.0f, 7.5f);
-    glm::mat4 lightProjection = glm::ortho(-20.0f, 20.0f, -20.0f, 20.0f, 1.0f, 50.0f);
-    glm::mat4 lightView = glm::lookAt(lightPos, glm::vec3(0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+    
+    glm::mat4 lightView = lights[0]->getViewMatrix();
+
+    glm::mat4 lightProjection = glm::ortho(-15.0f, 15.0f, -15.0f, 15.0f, 1.0f, 20.0f);
+
+
     lightSpaceMatrix = lightProjection * lightView;
     shadowShader->setMat4("lightSpaceMatrix", lightSpaceMatrix);
 
@@ -110,4 +119,13 @@ void Scene::renderShadowMap()
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
     glViewport(0, 0, 800, 600);
 
+}
+
+// Rotate light around the scene (for the moment)
+void Scene::update(float deltaTime)
+{
+    for(Light* light : lights)
+    {
+        light->update(deltaTime);
+    }
 }

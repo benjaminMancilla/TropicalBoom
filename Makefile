@@ -200,6 +200,54 @@ src/GameWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CGame.dir/build.make CMakeFiles/CGame.dir/src/GameWindow.cpp.s
 .PHONY : src/GameWindow.cpp.s
 
+src/Light/DirectionalLight.o: src/Light/DirectionalLight.cpp.o
+.PHONY : src/Light/DirectionalLight.o
+
+# target to build an object file
+src/Light/DirectionalLight.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CGame.dir/build.make CMakeFiles/CGame.dir/src/Light/DirectionalLight.cpp.o
+.PHONY : src/Light/DirectionalLight.cpp.o
+
+src/Light/DirectionalLight.i: src/Light/DirectionalLight.cpp.i
+.PHONY : src/Light/DirectionalLight.i
+
+# target to preprocess a source file
+src/Light/DirectionalLight.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CGame.dir/build.make CMakeFiles/CGame.dir/src/Light/DirectionalLight.cpp.i
+.PHONY : src/Light/DirectionalLight.cpp.i
+
+src/Light/DirectionalLight.s: src/Light/DirectionalLight.cpp.s
+.PHONY : src/Light/DirectionalLight.s
+
+# target to generate assembly for a file
+src/Light/DirectionalLight.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CGame.dir/build.make CMakeFiles/CGame.dir/src/Light/DirectionalLight.cpp.s
+.PHONY : src/Light/DirectionalLight.cpp.s
+
+src/Light/PointLight.o: src/Light/PointLight.cpp.o
+.PHONY : src/Light/PointLight.o
+
+# target to build an object file
+src/Light/PointLight.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CGame.dir/build.make CMakeFiles/CGame.dir/src/Light/PointLight.cpp.o
+.PHONY : src/Light/PointLight.cpp.o
+
+src/Light/PointLight.i: src/Light/PointLight.cpp.i
+.PHONY : src/Light/PointLight.i
+
+# target to preprocess a source file
+src/Light/PointLight.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CGame.dir/build.make CMakeFiles/CGame.dir/src/Light/PointLight.cpp.i
+.PHONY : src/Light/PointLight.cpp.i
+
+src/Light/PointLight.s: src/Light/PointLight.cpp.s
+.PHONY : src/Light/PointLight.s
+
+# target to generate assembly for a file
+src/Light/PointLight.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CGame.dir/build.make CMakeFiles/CGame.dir/src/Light/PointLight.cpp.s
+.PHONY : src/Light/PointLight.cpp.s
+
 src/Model.o: src/Model.cpp.o
 .PHONY : src/Model.o
 
@@ -388,6 +436,12 @@ help:
 	@echo "... src/GameWindow.o"
 	@echo "... src/GameWindow.i"
 	@echo "... src/GameWindow.s"
+	@echo "... src/Light/DirectionalLight.o"
+	@echo "... src/Light/DirectionalLight.i"
+	@echo "... src/Light/DirectionalLight.s"
+	@echo "... src/Light/PointLight.o"
+	@echo "... src/Light/PointLight.i"
+	@echo "... src/Light/PointLight.s"
 	@echo "... src/Model.o"
 	@echo "... src/Model.i"
 	@echo "... src/Model.s"

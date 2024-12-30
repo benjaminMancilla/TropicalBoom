@@ -320,5 +320,6 @@ CMakeFiles/CGame.dir/src/GameWindow.cpp.o: \
  /home/benjamin/Desktop/CGame/include/Shader.h \
  /home/benjamin/Desktop/CGame/include/Renderer.h \
  /home/benjamin/Desktop/CGame/include/Camera.h \
+ /home/benjamin/Desktop/CGame/include/Light/Light.h \
  /home/benjamin/Desktop/CGame/include/Shader.h \
  /home/benjamin/Desktop/CGame/include/Model.h

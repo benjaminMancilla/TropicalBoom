@@ -125,3 +125,15 @@ void Shader::setSampler(const std::string& name, int textureUnit) const
         std::cerr << "Sampler: Shader program not initialized" << std::endl;
     }
 }
+
+void Shader::setInt(const std::string& name, int value) const
+{
+    if (ID) 
+    {
+        glUniform1i(glGetUniformLocation(ID, name.c_str()), value);
+    }
+    else 
+    {
+        std::cerr << "Int: Shader program not initialized" << std::endl;
+    }
+}

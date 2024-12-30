@@ -2,6 +2,8 @@
 #include <Model.h>
 #include <Scene.h>
 #include <Renderer.h>
+#include <Light/DirectionalLight.h>
+#include <Light/PointLight.h>
 
 #include <iostream>
 
@@ -33,26 +35,37 @@ void initTriangleTest(unsigned int& VAO, unsigned int& VBO)
 }
 
 int main() {
-    GameWindow gameWindow(800, 600, "Hello World");
+    // Window
+    GameWindow gameWindow(800, 600, "Tropical Boom");
     if (!gameWindow.init()) {
         return -1;
     }
+    
+    // Scene
+    Scene scene;
+
+    // Shader
     Shader shader("shaders/vertex_shader.glsl", "shaders/fragment_shader.glsl");
     Shader shadowShader("shaders/shadow_vertex_shader.glsl", "shaders/shadow_fragment_shader.glsl");
-
-    Scene scene;
 
     scene.setShader(&shader);
     scene.setShadowShader(&shadowShader);
     
+    // Projection
     scene.setProjection(glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f));
 
-    // Configurar la cámara
+    // Camera
     Camera camera(glm::vec3(0.0f, 1.0f, 5.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
     scene.setCamera(camera);
 
-    scene.setLightPos(glm::vec3(2.0f, 6.0f, 5.0f));
+    // Lights
+    DirectionalLight* light = new DirectionalLight(glm::vec3(-1.0f, -20.0f, -20.0f), glm::vec3(1.0f, 1.0f, 1.0f));
+    scene.addLight(light);
+    PointLight* pointLight = new PointLight(glm::vec3(4.0f, 6.0f, 4.0f), glm::vec3(0.9f, 0.9f, 0.9f));
+    scene.addLight(pointLight);
 
+
+    // Models
     Model cube("models/cube.obj");
     cube.setColor(glm::vec3(0.0f, 1.0f, 0.0f));
 
@@ -66,6 +79,7 @@ int main() {
     scene.addModel(triangle);
     scene.addModel(plane);
 
+    // Render
     scene.setupModels();
     scene.setupShadowMap();
 

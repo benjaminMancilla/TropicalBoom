@@ -5,6 +5,7 @@
 #include "Shader.h"
 #include "Renderer.h"
 #include "Camera.h"
+#include "Light/Light.h"
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -30,14 +31,16 @@ class Scene
         void setProjection(const glm::mat4& projection) { projectionMatrix = projection; }
         const glm::mat4& getProjection() const { return projectionMatrix; }
 
-        void setLightPos(const glm::vec3& lightPos) { this->lightPos = lightPos; }
+        void addLight(Light* light) { lights.push_back(light); }
+        const std::vector<Light*>& getLights() const { return lights; }
 
         void setupShadowMap();
         void renderShadowMap();
+
+        void update(float deltaTime);
         
         void render();
         
-
     private:
         Camera camera;
         Renderer* renderer = nullptr;
@@ -45,7 +48,8 @@ class Scene
         Shader* shader = nullptr;
         glm::mat4 projectionMatrix;
         glm::mat4 lightSpaceMatrix;
-        glm::vec3 lightPos;
+        std::vector<Light*> lights;
+        
 
         // Shadow mapping
         Shader* shadowShader = nullptr;

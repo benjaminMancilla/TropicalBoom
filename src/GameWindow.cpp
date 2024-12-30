@@ -63,10 +63,20 @@ void GameWindow::framebufferSizeCallback(GLFWwindow* window, int width, int heig
 // Main loop with Models
 void GameWindow::mainLoop(Scene& scene) 
 {
+    float lastFrameTime = glfwGetTime();
+
     while (!glfwWindowShouldClose(window)) 
     {
+        // Frame
+        float currentFrameTime = glfwGetTime();
+        float deltaTime = currentFrameTime - lastFrameTime;
+        lastFrameTime = currentFrameTime;
+
         // Clear the screen
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+        // Update Scene
+        scene.update(deltaTime);
 
         // Render the scene
         scene.renderShadowMap();
